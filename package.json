@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "start": "tsx watch src/index.ts"
+    "start": "tsx watch src/index.ts",
+    "db:push": "npx drizzle-kit push"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.1",
