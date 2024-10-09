@@ -8,3 +8,6 @@ npm run dev
 - [x] install hono zod(validation) openapi (https://github.com/honojs/middleware/tree/main/packages/zod-openapi)
 - [x] configure not found and error handlers (https://hono.dev/docs/api/hono#not-found)
 - [x] setup env (with type safety using zod)
+
+- [x] add documentation endpoint (https://hono.dev/examples/zod-openapi)
+- [ ] add documented routes (https://hono.dev/examples/zod-openapi)
