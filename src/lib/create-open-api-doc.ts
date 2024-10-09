@@ -1,5 +1,6 @@
 import packageJSON from "@/../package.json";
 import { OpenAPIHono } from "@hono/zod-openapi";
+import { apiReference } from "@scalar/hono-api-reference";
 
 export default function createOpenApiDoc(app: OpenAPIHono) {
   app.doc("/doc", {
@@ -10,4 +11,20 @@ export default function createOpenApiDoc(app: OpenAPIHono) {
       version: packageJSON.version,
     },
   });
+
+  //Scalar Config Documentation: https://github.com/scalar/scalar/blob/main/documentation/configuration.md
+  app.get(
+    "/reference",
+    apiReference({
+      spec: {
+        url: "/doc",
+      },
+      theme: "kepler",
+      layout: "classic",
+      defaultHttpClient: {
+        targetKey: "javascript",
+        clientKey: "fetch",
+      },
+    })
+  );
 }
