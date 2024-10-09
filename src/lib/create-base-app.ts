@@ -2,6 +2,7 @@ import { OpenAPIHono } from "@hono/zod-openapi";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 
+import defaultHook from "@/middleware/default-hook";
 import notFound from "@/middleware/not-found";
 import onError from "@/middleware/on-error";
 import serveEmojiFavicon from "@/middleware/serve-emoji-favicon";
@@ -9,7 +10,7 @@ import serveEmojiFavicon from "@/middleware/serve-emoji-favicon";
 // Structed like this so we can attach documented routes (without middleware added by create base app)
 export function createStandaloneApp() {
   // OpenApiHono is just a wrapper around Hono (https://hono.dev/examples/zod-openapi) enables easier api documentation(openApi)
-  return new OpenAPIHono({ strict: false });
+  return new OpenAPIHono({ strict: false, defaultHook });
 }
 
 export default function createBaseApp() {
