@@ -1,3 +1,4 @@
+import jsonContent from "@/helpers/json-content";
 import { createStandaloneApp } from "@/lib/create-base-app";
 import { createRoute, z } from "@hono/zod-openapi";
 
@@ -7,18 +8,14 @@ const router = createStandaloneApp().openapi(
   createRoute({
     method: "get",
     path: "/",
-    description: "Returns a greeting",
+    description: "Index route - Returns a greeting",
     responses: {
-      200: {
-        description: "Returns a greeting",
-        content: {
-          "application/json": {
-            schema: z.object({
-              message: z.string(),
-            }),
-          },
-        },
-      },
+      200: jsonContent(
+        z.object({
+          message: z.string(),
+        }),
+        "Returns a greeting"
+      ),
     },
   }),
   // route handler
