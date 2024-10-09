@@ -14,6 +14,9 @@ importers:
       '@hono/zod-openapi':
         specifier: ^0.16.4
         version: 0.16.4(hono@4.6.3)(zod@3.23.8)
+      '@scalar/hono-api-reference':
+        specifier: ^0.5.152
+        version: 0.5.152(hono@4.6.3)
       hono:
         specifier: ^4.6.3
         version: 4.6.3
@@ -198,8 +201,25 @@ packages:
       hono: '>=3.9.0'
       zod: ^3.19.1
 
+  '@scalar/hono-api-reference@0.5.152':
+    resolution: {integrity: sha512-mSRpicEjr3q3ulXHV9fpPKgq+Mju0/A9jyB4NvvZ9GitunTm6P4urr/RKzgESDTqYK3zK/VGahZWeQFLi6PSKQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      hono: ^4.0.0
+
+  '@scalar/openapi-types@0.1.1':
+    resolution: {integrity: sha512-NMy3QNk6ytcCoPUGJH0t4NNr36OWXgZhA3ormr3TvhX1NDgoF95wFyodGVH8xiHeUyn2/FxtETm8UBLbB5xEmg==}
+    engines: {node: '>=18'}
+
+  '@scalar/types@0.0.13':
+    resolution: {integrity: sha512-4baCQ3uXTQsT/da5X3+yO34VEu057Jjw0SJFkaaFmXTqHXVZM+SaDHSyTvT6tyKvgDpPpn6iD22uiFCdldEzRQ==}
+    engines: {node: '>=18'}
+
   '@types/node@20.16.11':
     resolution: {integrity: sha512-y+cTCACu92FyA5fgQSAI8A1H429g7aSK2HsO7K4XYUWc4dY5IUz55JSDIYT6/VsOLfGy8vmvQYC2hfb0iF16Uw==}
+
+  '@unhead/schema@1.11.7':
+    resolution: {integrity: sha512-j9uN7T63aUXrZ6yx2CfjVT7xZHjn0PZO7TPMaWqMFjneIH/NONKvDVCMEqDlXeqdSIERIYtk/xTHgCUMer5eyw==}
 
   esbuild@0.23.1:
     resolution: {integrity: sha512-VVNz/9Sa0bs5SELtn3f7qhJCDPCF5oMEl5cO9/SSinpE9hbPVvxbd572HH5AKiP7WD8INO53GgfDDhRjkylHEg==}
@@ -217,6 +237,9 @@ packages:
   hono@4.6.3:
     resolution: {integrity: sha512-0LeEuBNFeSHGqZ9sNVVgZjB1V5fmhkBSB0hZrpqStSMLOWgfLy0dHOvrjbJh0H2khsjet6rbHfWTHY0kpYThKQ==}
     engines: {node: '>=16.9.0'}
+
+  hookable@5.5.3:
+    resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
 
   openapi3-ts@4.4.0:
     resolution: {integrity: sha512-9asTNB9IkKEzWMcHmVZE7Ts3kC9G7AFHfs8i7caD8HbI76gEjdkId4z/AkP83xdZsH7PLAnnbl47qZkXuxpArw==}
@@ -236,6 +259,9 @@ packages:
     resolution: {integrity: sha512-bLQOjaX/ADgQ20isPJRvF0iRUHIxVhYvr53Of7wGcWlO2jvtUlH5m87DsmulFVxRpNLOnI4tB6p/oh8D7kpn9Q==}
     engines: {node: '>= 14'}
     hasBin: true
+
+  zhead@2.2.4:
+    resolution: {integrity: sha512-8F0OI5dpWIA5IGG5NHUg9staDwz/ZPxZtvGVf01j7vHqSyZ0raHY+78atOVxRqb73AotX22uV1pXt3gYSstGag==}
 
   zod@3.23.8:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
@@ -335,9 +361,26 @@ snapshots:
       hono: 4.6.3
       zod: 3.23.8
 
+  '@scalar/hono-api-reference@0.5.152(hono@4.6.3)':
+    dependencies:
+      '@scalar/types': 0.0.13
+      hono: 4.6.3
+
+  '@scalar/openapi-types@0.1.1': {}
+
+  '@scalar/types@0.0.13':
+    dependencies:
+      '@scalar/openapi-types': 0.1.1
+      '@unhead/schema': 1.11.7
+
   '@types/node@20.16.11':
     dependencies:
       undici-types: 6.19.8
+
+  '@unhead/schema@1.11.7':
+    dependencies:
+      hookable: 5.5.3
+      zhead: 2.2.4
 
   esbuild@0.23.1:
     optionalDependencies:
@@ -375,6 +418,8 @@ snapshots:
 
   hono@4.6.3: {}
 
+  hookable@5.5.3: {}
+
   openapi3-ts@4.4.0:
     dependencies:
       yaml: 2.5.1
@@ -391,5 +436,7 @@ snapshots:
   undici-types@6.19.8: {}
 
   yaml@2.5.1: {}
+
+  zhead@2.2.4: {}
 
   zod@3.23.8: {}
