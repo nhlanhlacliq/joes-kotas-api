@@ -6,6 +6,7 @@ import { createRoute, z } from "@hono/zod-openapi";
 const router = createStandaloneApp().openapi(
   // Route Documentation
   createRoute({
+    tags: ["Index"],
     method: "get",
     path: "/",
     description: "Index route - Returns a greeting",
