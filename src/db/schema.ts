@@ -2,6 +2,7 @@ import {
   boolean,
   integer,
   pgTable,
+  text,
   timestamp,
   varchar,
 } from "drizzle-orm/pg-core";
@@ -17,7 +18,7 @@ export const usersTable = pgTable("users", {
 
 export const inventoryTable = pgTable("inventory", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
-  name: varchar({ length: 255 }).notNull(),
+  name: text().notNull(),
   count: integer().notNull(),
   isAvailable: boolean().notNull(),
   createdAt: timestamp("created_at").defaultNow(),
