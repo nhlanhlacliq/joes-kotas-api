@@ -1,6 +1,7 @@
 {
   "name": "joes-kotas-api",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "start": "tsx watch src/index.ts"
@@ -8,6 +9,7 @@
   "dependencies": {
     "@hono/node-server": "^1.13.1",
     "@hono/zod-openapi": "^0.16.4",
+    "@scalar/hono-api-reference": "^0.5.152",
     "hono": "^4.6.3",
     "zod": "^3.23.8"
   },
