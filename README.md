@@ -9,14 +9,18 @@ DEPLOY
 
 ENDPOINTS & DOCS
 
-- [x] install hono zod(validation) openapi (https://github.com/honojs/middleware/tree/main/packages/zod-openapi)
-- [x] configure not found and error handlers (https://hono.dev/docs/api/hono#not-found)
+- [x] install hono zod(validation) openapi ([link](https://github.com/honojs/middleware/tree/main/packages/zod-openapi))
+- [x] configure not found and error handlers ([link](https://hono.dev/docs/api/hono#not-found))
 - [x] setup env (with type safety using zod)
 
-- [x] add documentation endpoint (https://hono.dev/examples/zod-openapi)
-- [x] add documented routes (https://hono.dev/examples/zod-openapi)
-- [x] create interactive documentation using scalar (https://github.com/scalar/scalar/blob/main/packages/hono-api-reference/README.md). (https://github.com/scalar/scalar/blob/main/documentation/configuration.md)
+- [x] add documentation endpoint ([link](https://hono.dev/examples/zod-openapi))
+- [x] add documented routes ([link](https://hono.dev/examples/zod-openapi))
+- [x] create interactive documentation using scalar ([link](https://github.com/scalar/scalar/blob/main/packages/hono-api-reference/README.md)). ([link](https://github.com/scalar/scalar/blob/main/documentation/configuration.md))
 
 DB
 
-- [ ] setup drizzle
+- [x] setup drizzle neon postgres
+- [x] setup db tables & schema
+- [x] create validation schemas from db table schema ([drizzle zod](https://orm.drizzle.team/docs/zod))
+- [x] connect inventory routes to db
+- [ ] connect auth routes to db
