@@ -3,7 +3,7 @@ import createOpenApiDoc from "./lib/create-open-api-doc";
 
 import error from "@/routes/error.route";
 import index from "@/routes/index.route";
-import inventory from "@/routes/inventory/inventory.index";
+import inventory from "@/routes/inventory/inventory.route";
 
 const app = createBaseApp();
 
