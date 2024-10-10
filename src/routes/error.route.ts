@@ -1,9 +1,9 @@
 import jsonContent from "@/helpers/json-content";
-import { createStandaloneApp } from "@/lib/create-base-app";
+import { createBaseApp } from "@/lib/create-app";
 import { createRoute, z } from "@hono/zod-openapi";
 
 // See for more info: https://hono.dev/examples/zod-openapi
-const router = createStandaloneApp().openapi(
+const router = createBaseApp().openapi(
   // Route Documentation
   createRoute({
     tags: ["Error"],
