@@ -25,4 +25,4 @@ DB
 - [x] connect inventory routes to db
 - [x] implement password hashing ([bcrypt](https://www.npmjs.com/package/bcrypt))
 - [x] connect auth routes to db, create auth token
-- [ ] add user verification on inventory routes
+- [x] add auth middleware to verify users on inventory routes ([docs](https://github.com/honojs/middleware/tree/main/packages/zod-openapi#configure-middleware-for-each-endpoint))
