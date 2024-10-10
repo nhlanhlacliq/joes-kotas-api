@@ -22,12 +22,16 @@ export const usersTable = pgTable("users", {
     .$onUpdate(() => new Date()),
 });
 
-export const selectUsersSchema = createSelectSchema(usersTable);
+export const selectUsersSchema = createSelectSchema(usersTable).omit({
+  passwordHash: true,
+});
+
 export const insertUsersSchema = createInsertSchema(usersTable, {
   email: (schema) => schema.email.email(),
   username: (schema) => schema.username.min(1),
 }).omit({
   id: true,
+  passwordHash: true,
   createdAt: true,
   updatedAt: true,
 });
