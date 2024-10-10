@@ -23,4 +23,5 @@ DB
 - [x] setup db tables & schema
 - [x] create validation schemas from db table schema ([drizzle zod](https://orm.drizzle.team/docs/zod))
 - [x] connect inventory routes to db
+- [x] implement password hashing ([bcrypt](https://www.npmjs.com/package/bcrypt))
 - [ ] connect auth routes to db
