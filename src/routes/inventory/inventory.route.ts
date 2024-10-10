@@ -6,11 +6,12 @@ import {
 } from "@/db/schema";
 import IdParamsSchema from "@/helpers/id-params-schema";
 import jsonContent from "@/helpers/json-content";
-import { createStandaloneApp } from "@/lib/create-base-app";
+import { createBaseApp } from "@/lib/create-app";
 import { createRoute, z } from "@hono/zod-openapi";
 import { eq } from "drizzle-orm";
+import authMiddleware from "@/middleware/auth";
 
-const router = createStandaloneApp()
+const router = createBaseApp()
   .openapi(
     // GET /inventory - List all food items
     createRoute({
@@ -18,6 +19,7 @@ const router = createStandaloneApp()
       method: "get",
       path: "/inventory",
       description: "Retrieve a list of all inventory items",
+      middleware: [authMiddleware], // Apply authentication middleware to this route
       responses: {
         200: jsonContent(
           z.array(selectInventorySchema),
@@ -46,6 +48,7 @@ const router = createStandaloneApp()
           true
         ),
       },
+      middleware: [authMiddleware],
       responses: {
         200: jsonContent(selectInventorySchema, "The created inventory item"),
       },
@@ -74,6 +77,7 @@ const router = createStandaloneApp()
           true
         ),
       },
+      middleware: [authMiddleware],
       responses: {
         200: jsonContent(selectInventorySchema, "The updated inventory item"),
         404: jsonContent(
@@ -109,6 +113,7 @@ const router = createStandaloneApp()
       request: {
         params: IdParamsSchema,
       },
+      middleware: [authMiddleware],
       responses: {
         204: { description: "Inventory item deleted" },
         404: jsonContent(
