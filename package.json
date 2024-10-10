@@ -13,6 +13,7 @@
     "@hono/zod-openapi": "^0.16.4",
     "@neondatabase/serverless": "^0.10.1",
     "@scalar/hono-api-reference": "^0.5.152",
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.34.1",
     "drizzle-zod": "^0.5.1",
@@ -20,6 +21,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20.11.17",
     "drizzle-kit": "^0.25.0",
     "tsx": "^4.19.1"
