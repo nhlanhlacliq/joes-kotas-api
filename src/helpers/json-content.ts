@@ -8,7 +8,8 @@ export type ZodSchema =
 
 export default function jsonContent<ZodSchema>(
   schema: ZodSchema,
-  description: string
+  description: string,
+  required = false
 ) {
   return {
     content: {
@@ -17,5 +18,6 @@ export default function jsonContent<ZodSchema>(
       },
     },
     description,
+    required: required,
   };
 }
