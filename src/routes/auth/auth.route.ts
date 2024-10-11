@@ -1,15 +1,12 @@
 import db from "@/db";
-import { selectUsersSchema, insertUsersSchema, usersTable } from "@/db/schema";
-import IdParamsSchema from "@/helpers/id-params-schema";
+import { selectUsersSchema, usersTable } from "@/db/schema";
 import jsonContent from "@/helpers/json-content";
 import { hashPassword, verifyPassword } from "@/helpers/password-hash";
 import { createBaseApp } from "@/lib/create-app";
 import { createRoute, z } from "@hono/zod-openapi";
 import { eq } from "drizzle-orm";
 import { sign } from "hono/jwt";
-import { emit } from "process";
 import { env } from "../../../env";
-import exp from "constants";
 
 // Define the schemas
 const registerUserSchema = z.object({
@@ -113,7 +110,7 @@ const router = createBaseApp()
         id: user.id,
         email: user.email,
         username: user.username,
-        exp: Math.floor(Date.now() / 1000) + 60 * 60, // Token expires after 1 hour
+        // exp: Math.floor(Date.now() / 1000) + 60 * 60, // Token expires after 1 hour
       };
       const token = await sign(payload, env.JWT_SECRET);
 
