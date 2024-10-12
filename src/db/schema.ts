@@ -9,6 +9,7 @@ import {
 } from "drizzle-orm/pg-core";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 
+// Users table
 export const usersTable = pgTable("users", {
   id: serial("id").primaryKey(),
   email: varchar({ length: 255 }).notNull().unique(),
@@ -36,6 +37,7 @@ export const insertUsersSchema = createInsertSchema(usersTable, {
   updatedAt: true,
 });
 
+// Inventory table
 export const inventoryTable = pgTable("inventory", {
   id: serial("id").primaryKey(),
   name: text().notNull(),
