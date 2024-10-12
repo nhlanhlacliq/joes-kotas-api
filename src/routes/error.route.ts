@@ -6,7 +6,7 @@ import { createRoute, z } from "@hono/zod-openapi";
 const router = createBaseApp().openapi(
   // Route Documentation
   createRoute({
-    tags: ["Error"],
+    tags: ["Test"],
     method: "get",
     path: "/error",
     description: "Returns an error",
