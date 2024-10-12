@@ -8,7 +8,7 @@ import { eq } from "drizzle-orm";
 import { sign } from "hono/jwt";
 import { env } from "../../../env";
 
-// Define the schemas
+// Input schemas
 const registerUserSchema = z.object({
   email: z.string().email(),
   username: z.string().min(1),
