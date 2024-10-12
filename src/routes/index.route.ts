@@ -6,7 +6,7 @@ import { createRoute, z } from "@hono/zod-openapi";
 const router = createBaseApp().openapi(
   // Route Documentation
   createRoute({
-    tags: ["Index"],
+    tags: ["Test"],
     method: "get",
     path: "/",
     description: "Index route - Returns a greeting",
@@ -21,7 +21,10 @@ const router = createBaseApp().openapi(
   }),
   // route handler
   (ctx) => {
-    return ctx.json({ message: "Hello! Joes Kotas API index route" });
+    return ctx.json({
+      message:
+        "Hello! Joes Kotas API index route. Go to /reference for more info!",
+    });
   }
 );
 
